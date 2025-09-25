@@ -1,0 +1,137 @@
+/* Base styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+}
+
+header {
+  text-align: center;
+  margin: 32px 0 24px 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+}
+
+/* Food section base */
+.food-section {
+  position: relative;
+  border: 1px solid #000;
+  background-color: #ffe5b4;
+  padding: 56px 20px 20px 20px;
+  margin-bottom: 24px;
+  min-height: 200px;
+  color: #222;
+  border-radius: 8px;
+  /* Spacing between sections on desktop/tablet */
+  float: left;
+  transition: width 0.2s;
+}
+
+/* Section Colors */
+.chicken {
+  background-color: #ffe5b4; /* light orange */
+}
+.beef {
+  background-color: #f2c1c1; /* light red */
+}
+.sushi {
+  background-color: #c1e4f2; /* light blue */
+}
+
+/* Section title styles */
+.section-title {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  padding: 8px 0;
+  background: #ffb347;
+  border: 1px solid #000;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  color: #222;
+  font-size: 1.15rem;
+  z-index: 1;
+}
+
+.beef .section-title {
+  background: #ea6969;
+  color: #fff;
+}
+.sushi .section-title {
+  background: #5cb3ff;
+  color: #fff;
+}
+
+/* Desktop styles: 3 columns */
+@media (min-width: 992px) {
+  .food-section {
+    width: 32%;
+    margin-right: 2%;
+    margin-bottom: 0;
+  }
+  .food-section:last-child {
+    margin-right: 0;
+  }
+}
+
+/* Tablet styles: 2 columns on top, 1 full-width below */
+@media (min-width: 768px) and (max-width: 991px) {
+  .food-section {
+    width: 48%;
+    margin-right: 4%;
+    margin-bottom: 24px;
+  }
+  .food-section:nth-child(2) {
+    margin-right: 0;
+  }
+  .food-section:nth-child(3) {
+    width: 100%;
+    clear: both;
+    margin-right: 0;
+  }
+}
+
+/* Mobile styles: single column */
+@media (max-width: 767px) {
+  .container {
+    width: 98%;
+    margin: 0 auto;
+  }
+  .food-section {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+    float: none;
+  }
+  .section-title {
+    width: 100px;
+    font-size: 1rem;
+    padding: 7px 0;
+  }
+}
+
+/* Clearfix for container */
+.container::after {
+  content: "";
+  display: table;
+  clear: both;
+}
